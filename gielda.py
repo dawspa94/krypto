@@ -13,7 +13,7 @@ def get_prices():
         'vs_currencies': CURRENCY,
     }
     response = requests.get(API_URL, params=params)
-    response.raise_for_status()  # Sprawdza, czy zapytanie się powiodło
+    response.raise_for_status()  
     return response.json()
 
 def monitor():
@@ -34,6 +34,6 @@ def monitor():
             previous_prices[crypto] = price
         time.sleep(INTERVAL)
 
-# Uruchomienie monitorowania
+
 monitor()
    
